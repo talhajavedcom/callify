@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   CALLIFY — ALL DESIGN TOKENS
+   All colors, spacing, fonts defined here as CSS variables.
+   Components use these via Tailwind token classes like:
+   bg-callify-brand, text-callify-text-muted, etc.
+   NO hardcoded hex values in components.
+   ============================================================ */
+
+@theme {
+  /* ── Fonts ─────────────────────────────────────────────── */
+  --font-body: Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Arial, ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Brand green ───────────────────────────────────────── */
+  --color-callify-brand: #5c8a72;
+  --color-callify-brand-dark: #4a7260;
+  --color-callify-brand-light: #6fa080;
+  --color-callify-brand-muted: #8fad9a;
+
+  /* ── Backgrounds ───────────────────────────────────────── */
+  --color-callify-bg: #ffffff;
+  --color-callify-bg-alt: #f5f7f5;
+  /* alternating light gray-green sections */
+  --color-callify-bg-hero: #eef2ee;
+  /* page hero / header area */
+  --color-callify-bg-card: #ffffff;
+  --color-callify-bg-dark: #1a1a1a;
+  /* navbar + footer */
+  --color-callify-bg-dark-2: #111111;
+  /* footer bottom bar */
+
+  /* ── Text ──────────────────────────────────────────────── */
+  --color-callify-text: #1a1a1a;
+  /* headings, primary text */
+  --color-callify-text-body: #4a4a4a;
+  /* body copy */
+  --color-callify-text-muted: #7a7a7a;
+  /* subtitles, captions */
+  --color-callify-text-light: #a0a0a0;
+  /* placeholders, disabled */
+  --color-callify-text-on-dark: #ffffff;
+  --color-callify-text-on-dark-dim: #b0b8b0;
+  /* muted text on dark bg */
+  --color-callify-text-on-dark-sub: #8a9490;
+  /* footer tagline, dimmer */
+  --color-callify-text-footer-bar: #5a6460;
+  /* bottom bar text */
+
+  /* ── Borders ───────────────────────────────────────────── */
+  --color-callify-border: #e2e8e2;
+  --color-callify-border-dark: #2a2a2a;
+  /* footer dividers */
+
+  /* ── Label / badge pill ────────────────────────────────── */
+  --color-callify-label-bg: #dde9e2;
+  --color-callify-label-text: #4a7260;
+
+  /* ── Step circles (How It Works) ───────────────────────── */
+  --color-callify-step-bg: #eef2ee;
+  --color-callify-step-border: #d0ddd5;
+
+  /* ── Pricing ───────────────────────────────────────────── */
+  --color-callify-pricing-active: #5c8a72;
+
+  /* ── Container max width ───────────────────────────────── */
+  --container-callify-width: 80rem;
+  /* 1280px — max-w-7xl equivalent */
+
+  /* ── Shadows (registered as theme values) ──────────────── */
+  --shadow-callify-btn: 0 2px 8px 0 rgba(92, 138, 114, 0.3);
+  --shadow-callify-btn-hover: 0 4px 16px 0 rgba(92, 138, 114, 0.4);
+  --shadow-callify-card: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-callify-card-hover: 0 4px 16px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-callify-text);
+  background-color: var(--color-callify-bg);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SCROLL REVEAL  (used by ScrollReveal.jsx)
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
